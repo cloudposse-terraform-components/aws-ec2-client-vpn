@@ -5,7 +5,7 @@ tags:
   - provider/aws
 ---
 
-# Component: `ec2`
+# Component: `ec2-client-vpn`
 
 This component is responsible for provisioning VPN Client Endpoints.
 
