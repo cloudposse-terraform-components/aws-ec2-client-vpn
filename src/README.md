@@ -8,7 +8,6 @@ tags:
 # Component: `ec2-client-vpn`
 
 This component is responsible for provisioning VPN Client Endpoints.
-
 ## Usage
 
 **Stack Level**: Regional
@@ -47,7 +46,7 @@ components:
             target_network_cidr: 0.0.0.0/0
 ```
 
-## Deploying
+### Deploying
 
 NOTE: This module uses the `aws_ec2_client_vpn_route` resource which throws an error if too many API calls come from a
 single host. Ignore this error and repeat the terraform command. It usually takes 3 deploys (or destroys) to complete.
@@ -64,7 +63,7 @@ Error on destroy (See issue https://github.com/hashicorp/terraform-provider-aws/
 timeout while waiting for resource to be gone (last state: 'deleting', timeout: 1m0s)
 ```
 
-## Testing
+### Testing
 
 NOTE: The `GoogleIDPMetadata-cloudposse.com.xml` in this repo is equivalent to the one in the `sso` component and is
 used for testing. This component can only specify a single SAML document. The customer SAML xml should be placed in this
@@ -100,7 +99,10 @@ nmap -p <PORT> <HOST>
 Successful tests have been seen with MSK and RDS.
 
 <!-- prettier-ignore-start -->
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- prettier-ignore-end -->
+
+
+<!-- markdownlint-disable -->
 ## Requirements
 
 | Name | Version |
@@ -175,13 +177,19 @@ No resources.
 | <a name="output_vpn_endpoint_arn"></a> [vpn\_endpoint\_arn](#output\_vpn\_endpoint\_arn) | The ARN of the Client VPN Endpoint Connection. |
 | <a name="output_vpn_endpoint_dns_name"></a> [vpn\_endpoint\_dns\_name](#output\_vpn\_endpoint\_dns\_name) | The DNS Name of the Client VPN Endpoint Connection. |
 | <a name="output_vpn_endpoint_id"></a> [vpn\_endpoint\_id](#output\_vpn\_endpoint\_id) | The ID of the Client VPN Endpoint Connection. |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-<!-- prettier-ignore-end -->
+<!-- markdownlint-restore -->
+
+
 
 ## References
 
-- [cloudposse/terraform-aws-ec2-client-vpn](https://github.com/cloudposse/terraform-aws-ec2-client-vpn) - Cloud Posse's
-  upstream component
+
+- [cloudposse/terraform-aws-ec2-client-vpn](https://github.com/cloudposse/terraform-aws-ec2-client-vpn) - Cloud Posse's upstream component
+
 - [cloudposse/awsutils](https://github.com/cloudposse/terraform-provider-awsutils) - Cloud Posse's awsutils provider
 
+
+
+
 [<img src="https://cloudposse.com/logo-300x69.svg" height="32" align="right"/>](https://cpco.io/homepage?utm_source=github&utm_medium=readme&utm_campaign=cloudposse-terraform-components/aws-ec2-client-vpn&utm_content=)
+
