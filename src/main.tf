@@ -53,6 +53,7 @@ module "ec2_client_vpn" {
   saml_metadata_document        = var.saml_metadata_document != null ? file(var.saml_metadata_document) : null
   dns_servers                   = var.dns_servers
   split_tunnel                  = var.split_tunnel
+  session_timeout_hours         = var.session_timeout_hours
 
   context = module.this.context
 }

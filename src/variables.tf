@@ -127,3 +127,13 @@ variable "split_tunnel" {
   type        = bool
   description = "Indicates whether split-tunnel is enabled on VPN endpoint. Default value is false."
 }
+
+variable "session_timeout_hours" {
+  type        = string
+  default     = "24"
+  description = "The maximum session duration time in hours. Valid values: 8, 10, 12, 24. Default is 24 hours."
+  validation {
+    condition     = contains(["8", "10", "12", "24"], var.session_timeout_hours)
+    error_message = "session_timeout_hours must be one of: 8, 10, 12, 24."
+  }
+}
