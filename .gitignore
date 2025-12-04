@@ -76,3 +76,6 @@ github/
 *.ovpn
 
 *.zip
+
+# Vendored components for local linting
+account-map/
