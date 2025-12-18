@@ -16,7 +16,7 @@ locals {
 
   authorization_rules = [
     for private_subnet_cidr in module.vpc.outputs.private_subnet_cidrs : {
-      name                 = "Internal Rule"
+      name                 = "Internal Rule - ${private_subnet_cidr}"
       access_group_id      = null
       authorize_all_groups = true
       description          = "Internal authorization rule"
